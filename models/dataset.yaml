@@ -1,0 +1,25 @@
+data:
+  target: train.DataModuleFromConfig
+  params:
+    batch_size: 64
+    num_workers: 2
+    train:
+      target: edit_dataset.EditDataset
+      params:
+        path: /v-zhendwang/datasets/IP2P/clip-filtered-dataset
+        split: train
+        min_resize_res: 256
+        max_resize_res: 256
+        crop_res: 256
+        flip_prob: 0.5
+        prompt_option: output
+    validation:
+      target: edit_dataset.EditDataset
+      params:
+        path: /v-zhendwang/datasets/IP2P/clip-filtered-dataset
+        split: val
+        min_resize_res: 256
+        max_resize_res: 256
+        crop_res: 256
+        prompt_option: output
+
