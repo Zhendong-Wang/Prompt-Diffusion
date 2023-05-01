@@ -1,5 +1,5 @@
 ## Prompt-Diffusion: In-Context Learning Unlocked for Diffusion Models
-
+### [Project Page](file:///E:/GitHub/prompt-diffusion.github.io/index.html) | [Paper]()
 ![Illustration](./assets/teaser_img.png)
 
 **In-Context Learning Unlocked for Diffusion Models**<br>
@@ -22,15 +22,17 @@ Our model also shows compelling text-guided image editing results. Our framework
 - [x] Release pretrained models
 - [x] Release play-around codes
 
-## Multi-Task Learning
+
+## Results
+### Multi-Task Learning
 
 ![Illustration](./assets/multi_task_results.png)
 
-## Generalization to New Tasks
+### Generalization to New Tasks
 
 ![Illustration](./assets/generalization_results.png)
 
-## Image Editing Ability
+### Image Editing Ability
 
 ![Illustration](./assets/edit_results.png)
 
@@ -57,15 +59,18 @@ python train.py --name 'experiment name' --gpus=8 --num_nodes=1 \
 
 We also provide the job script in `scripts/train_v1-5.sh` for an easy run. 
 
-## Play Prompt Diffusion & Pretrained Checkpoints
+## Run Prompt Diffusion from our checkpoints
 
 We will update the code for playing Prompt Diffusion and the model checkpoints soon. 
 
-## More Examples
+[//]: # (## More Examples)
 
-![Illustration](./assets/more_example_depth.png)
-![Illustration](./assets/more_example_hed.png)
-![Illustration](./assets/more_example_seg.png)
+[//]: # ()
+[//]: # (![Illustration]&#40;./assets/more_example_depth.png&#41;)
+
+[//]: # (![Illustration]&#40;./assets/more_example_hed.png&#41;)
+
+[//]: # (![Illustration]&#40;./assets/more_example_seg.png&#41;)
 
 
 [//]: # (## Citation)
