@@ -1,5 +1,5 @@
 ## Prompt-Diffusion: In-Context Learning Unlocked for Diffusion Models
-### [Project Page](file:///E:/GitHub/prompt-diffusion.github.io/index.html) | [Paper]()
+### [Project Page](https://zhendong-wang.github.io/prompt-diffusion.github.io/) | [Paper]()
 ![Illustration](./assets/teaser_img.png)
 
 **In-Context Learning Unlocked for Diffusion Models**<br>
@@ -63,14 +63,11 @@ We also provide the job script in `scripts/train_v1-5.sh` for an easy run.
 
 We will update the code for playing Prompt Diffusion and the model checkpoints soon. 
 
-[//]: # (## More Examples)
+## More Examples
 
-[//]: # ()
-[//]: # (![Illustration]&#40;./assets/more_example_depth.png&#41;)
-
-[//]: # (![Illustration]&#40;./assets/more_example_hed.png&#41;)
-
-[//]: # (![Illustration]&#40;./assets/more_example_seg.png&#41;)
+![Illustration](./assets/more_example_depth.png)
+![Illustration](./assets/more_example_hed.png)
+![Illustration](./assets/more_example_seg.png)
 
 
 [//]: # (## Citation)
