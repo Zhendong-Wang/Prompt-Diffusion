@@ -1,5 +1,5 @@
 ## Prompt-Diffusion: In-Context Learning Unlocked for Diffusion Models
-### [Project Page](https://zhendong-wang.github.io/prompt-diffusion.github.io/) | [Paper]()
+### [Project Page](https://zhendong-wang.github.io/prompt-diffusion.github.io/) | [Paper](https://arxiv.org/abs/2305.01115)
 ![Illustration](./assets/teaser_img.png)
 
 **In-Context Learning Unlocked for Diffusion Models**<br>
@@ -70,26 +70,18 @@ We will update the code for playing Prompt Diffusion and the model checkpoints s
 ![Illustration](./assets/more_example_seg.png)
 
 
-[//]: # (## Citation)
+## Citation
 
-[//]: # ()
-[//]: # (```)
 
-[//]: # (@article{wang2023promptdiffusion,)
-
-[//]: # (  title     = {In-Context Learning Unlocked for Diffusion Models},)
-
-[//]: # (  author    = {Wang, Zhendong and Jiang, Yifan and Lu, Yadong and Shen, Yelong and He, Pengcheng and Chen, Weizhu and Wang, Zhangyang and Zhou, Mingyuan},)
-
-[//]: # (  journal   = {arXiv preprint arXiv:2206.02262},)
-
-[//]: # (  year      = {2023},)
-
-[//]: # (  url       = {https://arxiv.org/abs/2206.02262})
-
-[//]: # (})
-
-[//]: # (```)
+```
+@article{wang2023promptdiffusion,
+  title     = {In-Context Learning Unlocked for Diffusion Models},
+  author    = {Wang, Zhendong and Jiang, Yifan and Lu, Yadong and Shen, Yelong and He, Pengcheng and Chen, Weizhu and Wang, Zhangyang and Zhou, Mingyuan},
+  journal   = {arXiv preprint arXiv:2305.01115},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2305.01115}
+}
+```
 
 ## Acknowledgements
 We thank [Brooks et al.](https://github.com/timothybrooks/instruct-pix2pix) for sharing the dataset for finetuning Stable Diffusion. 
