@@ -18,25 +18,8 @@ Our model also shows compelling text-guided image editing results. Our framework
 
 ![Illustration](./assets/illustration.png)
 
-## ToDos
-- [x] Release pretrained models
-- [x] Release play-around codes
 
-
-## Results
-### Multi-Task Learning
-
-![Illustration](./assets/multi_task_results.png)
-
-### Generalization to New Tasks
-
-![Illustration](./assets/generalization_results.png)
-
-### Image Editing Ability
-
-![Illustration](./assets/edit_results.png)
-
-## Train Prompt Diffusion
+## Prompt Diffusion
 
 ### Prepare Dataset
 
@@ -59,9 +42,28 @@ python train.py --name 'experiment name' --gpus=8 --num_nodes=1 \
 
 We also provide the job script in `scripts/train_v1-5.sh` for an easy run. 
 
-## Run Prompt Diffusion from our checkpoints
+### Run Prompt Diffusion from our Checkpoints
 
-We will update the code for playing Prompt Diffusion and the model checkpoints soon. 
+We release the model checkpoints trained by us at our [Huggingface Page](https://huggingface.co/zhendongw/prompt-diffusion) and 
+the quick access for downloading is [here](https://huggingface.co/zhendongw/prompt-diffusion/resolve/main/network-step%3D04999.ckpt). 
+We provide a jupyter notebook 
+`run_prompt_diffusion.ipynb` for trying the inference code of Prompt Diffusion. We also provide a few images to try on in the folder
+`images_to_try`. We are preparing a demo based on Gradio and will release the demo soon. 
+
+
+## Results
+### Multi-Task Learning
+
+![Illustration](./assets/multi_task_results.png)
+
+### Generalization to New Tasks
+
+![Illustration](./assets/generalization_results.png)
+
+### Image Editing Ability
+
+![Illustration](./assets/edit_results.png)
+
 
 ## More Examples
 

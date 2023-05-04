@@ -125,8 +125,8 @@ class DDIMSampler(object):
                       callback=None, timesteps=None, quantize_denoised=False,
                       mask=None, x0=None, img_callback=None, log_every_t=100,
                       temperature=1., noise_dropout=0., score_corrector=None, corrector_kwargs=None,
-                      unconditional_guidance_scale=1., unconditional_conditioning=None, dynamic_threshold=None,
-                      ucg_schedule=None):
+                      unconditional_guidance_scale=1., unconditional_conditioning=None,
+                      dynamic_threshold=None, ucg_schedule=None):
         device = self.model.betas.device
         b = shape[0]
         if x_T is None:
@@ -184,12 +184,15 @@ class DDIMSampler(object):
                       dynamic_threshold=None):
         b, *_, device = *x.shape, x.device
 
-        if unconditional_conditioning is None or unconditional_guidance_scale == 1.:
-            model_output = self.model.apply_model(x, t, c)
-        else:
-            model_t = self.model.apply_model(x, t, c)
-            model_uncond = self.model.apply_model(x, t, unconditional_conditioning)
+        c_in = dict()
+        if unconditional_conditioning is not None:
+            x_in, t_in = torch.cat([x] * 2), torch.cat([t] * 2)
+            for k in c:
+                c_in[k] = [torch.cat([unconditional_conditioning[k][i], c[k][i]]) for i in range(len(c[k]))]
+            model_uncond, model_t = self.model.apply_model(x_in, t_in, c_in).chunk(2)
             model_output = model_uncond + unconditional_guidance_scale * (model_t - model_uncond)
+        else:
+            model_output = self.model.apply_model(x, t, c)
 
         if self.model.parameterization == "v":
             e_t = self.model.predict_eps_from_z_and_v(x, t, model_output)
