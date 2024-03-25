@@ -21,6 +21,43 @@ Our model also shows compelling text-guided image editing results. Our framework
 
 ## Prompt Diffusion
 
+### Hugging Face Diffusers Suport
+
+We thank the contribution of [iczaw](https://github.com/iczaw). Now Prompt-Diffusion is supported through the [diffusers](https://huggingface.co/docs/diffusers/en/index) package. Following the guidance code below for a quick try:
+```.bash
+import torch
+from diffusers import DDIMScheduler, UniPCMultistepScheduler
+from diffusers.utils import load_image
+from promptdiffusioncontrolnet import PromptDiffusionControlNetModel
+from pipeline_prompt_diffusion import PromptDiffusionPipeline
+
+
+from PIL import ImageOps
+
+image_a = ImageOps.invert(load_image("https://github.com/Zhendong-Wang/Prompt-Diffusion/blob/main/images_to_try/house_line.png?raw=true"))
+
+image_b = load_image("https://github.com/Zhendong-Wang/Prompt-Diffusion/blob/main/images_to_try/house.png?raw=true")
+query = ImageOps.invert(load_image("https://github.com/Zhendong-Wang/Prompt-Diffusion/blob/main/images_to_try/new_01.png?raw=true"))
+
+# load prompt diffusion controlnet and prompt diffusion
+
+controlnet = PromptDiffusionControlNetModel.from_pretrained("zhendongw/prompt-diffusion-diffusers", subfolder="controlnet", torch_dtype=torch.float16)
+pipe = PromptDiffusionPipeline.from_pretrained("zhendongw/prompt-diffusion-diffusers", controlnet=controlnet).to(torch_dtype=torch.float16).to('cuda')
+
+# speed up diffusion process with faster scheduler and memory optimization
+pipe.scheduler = DDIMScheduler.from_config(pipe.scheduler.config)
+# pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config)
+
+# remove following line if xformers is not installed
+# pipe.enable_xformers_memory_efficient_attention()
+# pipe.enable_model_cpu_offload()
+
+# generate image
+generator = torch.manual_seed(2023)
+image = pipe("a tortoise", num_inference_steps=50, generator=generator, image_pair=[image_a,image_b], image=query).images[0]
+image.save('./test.png')
+```
+
 ### Prepare Dataset
 
 We use the public dataset proposed by [InstructPix2Pix](https://github.com/timothybrooks/instruct-pix2pix) as our base dataset, 
