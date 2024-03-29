@@ -81,7 +81,7 @@ We also provide the job script in `scripts/train_v1-5.sh` for an easy run.
 
 ### Run Prompt Diffusion from our Checkpoints
 
-We release the model checkpoints trained by us at our [Huggingface Page](https://huggingface.co/zhendongw/prompt-diffusion) and 
+We release the model checkpoints trained by us at our [Hugging Face Page](https://huggingface.co/zhendongw/prompt-diffusion) and 
 the quick access for downloading is [here](https://huggingface.co/zhendongw/prompt-diffusion/resolve/main/network-step%3D04999.ckpt). 
 We provide a jupyter notebook 
 `run_prompt_diffusion.ipynb` for trying the inference code of Prompt Diffusion. We also provide a few images to try on in the folder
